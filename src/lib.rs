@@ -716,6 +716,8 @@ impl Config {
             base.to_string()
         } else if target.contains("x86_64") {
             format!("{} Win64", base)
+        } else if target.contains("thumbv7a-pc-windows-msvc") {
+            format!("{} ARM", base)
         } else {
             panic!("unsupported msvc target: {}", target);
         }
